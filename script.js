@@ -3,18 +3,18 @@ const container = document.getElementById('grid-container');
 const clearBtn = document.getElementById('clear-btn');
 const gridSizeBtn = document.getElementById('grid-size-btn');
 
-// Current grid size
+
 let currentGridSize = 16;
 
-// Function to create a grid with specified size
+
 function createGrid(size) {
-    // Clear existing grid
+    
     container.innerHTML = '';
     
-    // Calculate square size to maintain 480px total width
+    
     const squareSize = 480 / size;
     
-    // Update CSS for new square size
+    
     const style = document.createElement('style');
     style.textContent = `
         .grid-square {
@@ -27,7 +27,7 @@ function createGrid(size) {
         }
     `;
     
-    // Remove existing style if it exists
+    
     const existingStyle = document.getElementById('dynamic-grid-style');
     if (existingStyle) {
         existingStyle.remove();
@@ -36,7 +36,7 @@ function createGrid(size) {
     style.id = 'dynamic-grid-style';
     document.head.appendChild(style);
     
-    // Create and append grid squares
+    
     const totalSquares = size * size;
     for (let i = 0; i < totalSquares; i++) {
         const square = document.createElement('div');
@@ -51,7 +51,7 @@ function createGrid(size) {
     }
 }
 
-// Function to get new grid size from user
+
 function getNewGridSize() {
     let newSize;
     
@@ -65,7 +65,7 @@ function getNewGridSize() {
         
         newSize = parseInt(input);
         
-        // Validate input
+        
         if (isNaN(newSize) || newSize < 1 || newSize > 100) {
             alert('Please enter a valid number between 1 and 100.');
         }
@@ -74,7 +74,7 @@ function getNewGridSize() {
     return newSize;
 }
 
-// Grid size button functionality
+
 gridSizeBtn.addEventListener('click', function() {
     const newSize = getNewGridSize();
     if (newSize && newSize !== currentGridSize) {
@@ -83,7 +83,7 @@ gridSizeBtn.addEventListener('click', function() {
     }
 });
 
-// Clear button functionality
+
 clearBtn.addEventListener('click', function() {
     const squares = document.querySelectorAll('.grid-square');
     squares.forEach(square => {
@@ -91,5 +91,6 @@ clearBtn.addEventListener('click', function() {
     });
 });
 
-// Initialize the grid with default size
+
 createGrid(currentGridSize);
+// console.log(createGrid(currentGridSize))

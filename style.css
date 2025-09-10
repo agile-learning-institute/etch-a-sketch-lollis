@@ -15,19 +15,33 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 15px;
 }
 
-#clear-btn {
+#grid-size-btn, #clear-btn {
     padding: 12px 24px;
     font-size: 16px;
     font-weight: bold;
-    background-color: #4CAF50;
     color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#grid-size-btn {
+    background-color: #2196F3;
+}
+
+#grid-size-btn:hover {
+    background-color: #1976D2;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+#clear-btn {
+    background-color: #4CAF50;
 }
 
 #clear-btn:hover {
@@ -36,7 +50,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
-#clear-btn:active {
+#grid-size-btn:active, #clear-btn:active {
     transform: translateY(0);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
